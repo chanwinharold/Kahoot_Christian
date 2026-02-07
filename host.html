@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Animateur - Quiz Biblique</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="host-page">
+    <div class="container">
+        <!-- Navigation -->
+        <nav class="top-nav">
+            <a href="index.html" class="back-link">← Accueil</a>
+            <h1>Interface Animateur</h1>
+            <button id="toggleTheme" class="btn-icon">🌙</button>
+        </nav>
+
+        <!-- Section: Liste des Quiz -->
+        <section id="quizListSection" class="section active">
+            <div class="section-header">
+                <h2>Mes Quiz</h2>
+                <div class="actions">
+                    <button id="btnNewQuiz" class="btn btn-primary">+ Nouveau Quiz</button>
+                    <button id="btnImportQuiz" class="btn btn-secondary">📥 Importer</button>
+                </div>
+            </div>
+            <input type="file" id="importFileInput" accept=".json" style="display:none;">
+
+            <div id="quizList" class="quiz-list">
+                <!-- Les quiz seront affichés ici -->
+            </div>
+        </section>
+
+        <!-- Section: Création/Édition de Quiz -->
+        <section id="quizEditorSection" class="section">
+            <div class="section-header">
+                <button id="btnBackToList" class="btn btn-secondary">← Retour</button>
+                <h2 id="editorTitle">Nouveau Quiz</h2>
+                <button id="btnSaveQuiz" class="btn btn-success">💾 Enregistrer</button>
+            </div>
+
+            <div class="quiz-editor">
+                <div class="form-group">
+                    <label for="quizTitle">Titre du Quiz</label>
+                    <input type="text" id="quizTitle" placeholder="Ex: Les Miracles de Jésus" required>
+                </div>
+
+                <div class="questions-container">
+                    <div class="questions-header">
+                        <h3>Questions</h3>
+                        <button id="btnAddQuestion" class="btn btn-primary">+ Ajouter Question</button>
+                    </div>
+                    <div id="questionsList" class="questions-list">
+                        <!-- Les questions seront affichées ici -->
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section: Lancement du Quiz -->
+        <section id="gameLobbySection" class="section">
+            <div class="section-header">
+                <button id="btnBackToListFromLobby" class="btn btn-secondary">← Retour</button>
+                <h2>Salle d'Attente</h2>
+            </div>
+
+            <div class="game-lobby">
+                <div class="pin-display">
+                    <h3>Code PIN</h3>
+                    <div class="pin-code" id="gamePin">------</div>
+                    <p class="pin-instruction">Les participants peuvent rejoindre avec ce code</p>
+                </div>
+
+                <div class="participants-section">
+                    <h3>Participants (<span id="participantCount">0</span>)</h3>
+                    <div id="participantsList" class="participants-list">
+                        <!-- Les participants seront affichés ici -->
+                    </div>
+                </div>
+
+                <button id="btnStartGame" class="btn btn-success btn-large" disabled>
+                    🚀 Démarrer le Quiz
+                </button>
+            </div>
+        </section>
+
+        <!-- Section: Contrôle du Jeu -->
+        <section id="gameControlSection" class="section">
+            <div class="game-control">
+                <div class="question-display">
+                    <div class="question-header">
+                        <span class="question-number">Question <span id="currentQuestionNum">1</span>/<span id="totalQuestions">5</span></span>
+                        <div class="timer-display">
+                            <svg class="timer-circle" viewBox="0 0 100 100">
+                                <circle cx="50" cy="50" r="45" class="timer-bg"></circle>
+                                <circle cx="50" cy="50" r="45" class="timer-progress" id="timerCircle"></circle>
+                            </svg>
+                            <span class="timer-text" id="timerText">30</span>
+                        </div>
+                    </div>
+
+                    <h2 class="question-text" id="currentQuestionText"></h2>
+
+                    <div class="bible-reference" id="bibleReference" style="display:none;">
+                        <span class="icon">📖</span>
+                        <span id="referenceText"></span>
+                    </div>
+
+                    <div class="answers-grid" id="answersDisplay">
+                        <!-- Les réponses seront affichées ici -->
+                    </div>
+                </div>
+
+                <div class="game-stats">
+                    <div class="stat-card">
+                        <div class="stat-value" id="answeredCount">0</div>
+                        <div class="stat-label">Répondu</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-value" id="correctCount">0</div>
+                        <div class="stat-label">Correct</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-value" id="incorrectCount">0</div>
+                        <div class="stat-label">Incorrect</div>
+                    </div>
+                </div>
+
+                <button id="btnNextQuestion" class="btn btn-primary btn-large" style="display:none;">
+                    Prochaine Question →
+                </button>
+            </div>
+        </section>
+
+        <!-- Section: Classement -->
+        <section id="leaderboardSection" class="section">
+            <div class="leaderboard">
+                <h2>Classement</h2>
+                <div id="leaderboardList" class="leaderboard-list">
+                    <!-- Le classement sera affiché ici -->
+                </div>
+                <button id="btnContinueFromLeaderboard" class="btn btn-primary btn-large">
+                    Continuer
+                </button>
+            </div>
+        </section>
+
+        <!-- Section: Podium Final -->
+        <section id="podiumSection" class="section">
+            <div class="podium">
+                <h2>🏆 Podium Final 🏆</h2>
+                <div class="podium-display">
+                    <div class="podium-place second" id="podium2">
+                        <div class="medal">🥈</div>
+                        <div class="place-number">2</div>
+                        <div class="player-name">-</div>
+                        <div class="player-score">0</div>
+                    </div>
+                    <div class="podium-place first" id="podium1">
+                        <div class="medal">🥇</div>
+                        <div class="place-number">1</div>
+                        <div class="player-name">-</div>
+                        <div class="player-score">0</div>
+                    </div>
+                    <div class="podium-place third" id="podium3">
+                        <div class="medal">🥉</div>
+                        <div class="place-number">3</div>
+                        <div class="player-name">-</div>
+                        <div class="player-score">0</div>
+                    </div>
+                </div>
+                <div class="final-actions">
+                    <button id="btnNewGame" class="btn btn-primary">Nouveau Jeu</button>
+                    <button id="btnBackToListFromPodium" class="btn btn-secondary">Retour aux Quiz</button>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <script src="https://unpkg.com/peerjs@1.5.2/dist/peerjs.min.js"></script>
+    <script src="js/quiz-manager.js"></script>
+    <script src="js/game-engine.js"></script>
+    <script src="js/connection.js"></script>
+    <script src="js/app.js"></script>
+</body>
+</html>

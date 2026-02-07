@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Participant - Quiz Biblique</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="player-page">
+    <div class="container">
+        <!-- Navigation -->
+        <nav class="top-nav">
+            <a href="index.html" class="back-link">← Accueil</a>
+            <h1>Participant</h1>
+            <button id="toggleThemePlayer" class="btn-icon">🌙</button>
+        </nav>
+
+        <!-- Section: Connexion -->
+        <section id="joinSection" class="section active">
+            <div class="join-form">
+                <div class="form-icon">🎮</div>
+                <h2>Rejoindre un Quiz</h2>
+
+                <div class="form-group">
+                    <label for="pinInput">Code PIN</label>
+                    <input type="text" id="pinInput" placeholder="000000" maxlength="6" pattern="[0-9]*" inputmode="numeric" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="nicknameInput">Ton Pseudo</label>
+                    <input type="text" id="nicknameInput" placeholder="Ex: Pierre" maxlength="20" required>
+                </div>
+
+                <button id="btnJoinGame" class="btn btn-primary btn-large">
+                    Rejoindre
+                </button>
+
+                <div id="joinError" class="error-message" style="display:none;"></div>
+            </div>
+        </section>
+
+        <!-- Section: Salle d'Attente -->
+        <section id="waitingSection" class="section">
+            <div class="waiting-room">
+                <div class="waiting-icon">⏳</div>
+                <h2>En Attente du Démarrage...</h2>
+                <p class="waiting-text">L'animateur va bientôt lancer le quiz</p>
+
+                <div class="player-info">
+                    <div class="info-item">
+                        <span class="label">Ton pseudo:</span>
+                        <span class="value" id="playerNickname"></span>
+                    </div>
+                    <div class="info-item">
+                        <span class="label">Participants:</span>
+                        <span class="value" id="waitingParticipantCount">1</span>
+                    </div>
+                </div>
+
+                <div class="participants-preview" id="waitingParticipantsList">
+                    <!-- Liste des participants -->
+                </div>
+            </div>
+        </section>
+
+        <!-- Section: Jeu -->
+        <section id="playSection" class="section">
+            <div class="play-area">
+                <div class="play-header">
+                    <div class="question-info">
+                        <span class="question-number">Question <span id="playQuestionNum">1</span>/<span id="playTotalQuestions">5</span></span>
+                    </div>
+                    <div class="player-timer">
+                        <span id="playTimer">30</span>s
+                    </div>
+                </div>
+
+                <div class="question-text-player" id="playQuestionText">
+                    <!-- Question affichée ici -->
+                </div>
+
+                <div class="answers-player" id="playAnswers">
+                    <!-- Boutons de réponse -->
+                </div>
+
+                <div class="answer-feedback" id="answerFeedback" style="display:none;">
+                    <div class="feedback-content">
+                        <div class="feedback-icon" id="feedbackIcon"></div>
+                        <div class="feedback-text" id="feedbackText"></div>
+                        <div class="feedback-points" id="feedbackPoints"></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section: Classement Personnel -->
+        <section id="playerLeaderboardSection" class="section">
+            <div class="player-leaderboard">
+                <h2>Classement</h2>
+
+                <div class="personal-rank">
+                    <div class="rank-position">
+                        <span class="label">Ta Position</span>
+                        <span class="value" id="playerRank">-</span>
+                    </div>
+                    <div class="rank-score">
+                        <span class="label">Tes Points</span>
+                        <span class="value" id="playerScore">0</span>
+                    </div>
+                </div>
+
+                <div class="top-players">
+                    <h3>Top 5</h3>
+                    <div id="topPlayersList" class="top-players-list">
+                        <!-- Top joueurs -->
+                    </div>
+                </div>
+
+                <div class="waiting-next">
+                    <div class="spinner"></div>
+                    <p>En attente de la prochaine question...</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section: Résultats Finaux -->
+        <section id="finalResultSection" class="section">
+            <div class="final-result">
+                <h2>Quiz Terminé!</h2>
+
+                <div class="final-rank-display">
+                    <div class="final-medal" id="finalMedal">🎉</div>
+                    <div class="final-position">
+                        <span class="label">Ta Position Finale</span>
+                        <span class="value" id="finalRank">-</span>
+                    </div>
+                    <div class="final-score">
+                        <span class="label">Score Total</span>
+                        <span class="value" id="finalScore">0</span>
+                    </div>
+                </div>
+
+                <div class="final-message" id="finalMessage">
+                    Félicitations pour ta participation!
+                </div>
+
+                <button id="btnPlayAgain" class="btn btn-primary btn-large">
+                    Rejouer
+                </button>
+            </div>
+        </section>
+    </div>
+
+    <script src="https://unpkg.com/peerjs@1.5.2/dist/peerjs.min.js"></script>
+    <script src="js/connection.js"></script>
+    <script src="js/app.js"></script>
+</body>
+</html>

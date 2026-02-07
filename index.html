@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz Biblique - Accueil</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="home-page">
+    <div class="container">
+        <header class="home-header">
+            <div class="logo">
+                <span class="cross-icon">✝</span>
+                <h1>Quiz Biblique</h1>
+            </div>
+            <p class="subtitle">Apprentissage interactif de la Parole de Dieu</p>
+        </header>
+
+        <main class="home-content">
+            <div class="role-selection">
+                <div class="role-card host-card">
+                    <div class="card-icon">📚</div>
+                    <h2>Animateur</h2>
+                    <p>Créez et animez des quiz bibliques</p>
+                    <button onclick="window.location.href='host.html'" class="btn btn-host">
+                        Créer un Quiz
+                    </button>
+                </div>
+
+                <div class="role-card player-card">
+                    <div class="card-icon">🎮</div>
+                    <h2>Participant</h2>
+                    <p>Rejoignez un quiz avec un code PIN</p>
+                    <button onclick="window.location.href='player.html'" class="btn btn-player">
+                        Rejoindre
+                    </button>
+                </div>
+            </div>
+        </main>
+
+        <footer class="home-footer">
+            <p>Partagez la Parole de Dieu de manière ludique et interactive</p>
+        </footer>
+    </div>
+</body>
+</html>

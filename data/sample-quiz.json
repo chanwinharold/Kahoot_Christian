@@ -1,0 +1,235 @@
+{
+  "title": "Les Miracles de Jésus",
+  "questions": [
+    {
+      "question": "Quel était le premier miracle de Jésus?",
+      "answers": [
+        {
+          "text": "Transformation de l'eau en vin",
+          "isCorrect": true
+        },
+        {
+          "text": "Guérison d'un aveugle",
+          "isCorrect": false
+        },
+        {
+          "text": "Multiplication des pains",
+          "isCorrect": false
+        },
+        {
+          "text": "Marcher sur l'eau",
+          "isCorrect": false
+        }
+      ],
+      "timeLimit": 30,
+      "reference": "Jean 2:1-11"
+    },
+    {
+      "question": "Combien de pains Jésus a-t-il utilisé pour nourrir 5000 personnes?",
+      "answers": [
+        {
+          "text": "3 pains",
+          "isCorrect": false
+        },
+        {
+          "text": "5 pains",
+          "isCorrect": true
+        },
+        {
+          "text": "7 pains",
+          "isCorrect": false
+        },
+        {
+          "text": "12 pains",
+          "isCorrect": false
+        }
+      ],
+      "timeLimit": 25,
+      "reference": "Jean 6:9"
+    },
+    {
+      "question": "Qui Jésus a-t-il ressuscité d'entre les morts après 4 jours?",
+      "answers": [
+        {
+          "text": "Le fils de la veuve de Naïn",
+          "isCorrect": false
+        },
+        {
+          "text": "La fille de Jaïrus",
+          "isCorrect": false
+        },
+        {
+          "text": "Lazare",
+          "isCorrect": true
+        },
+        {
+          "text": "Pierre",
+          "isCorrect": false
+        }
+      ],
+      "timeLimit": 30,
+      "reference": "Jean 11:1-44"
+    },
+    {
+      "question": "Sur quelle mer Jésus a-t-il calmé la tempête?",
+      "answers": [
+        {
+          "text": "La Mer Morte",
+          "isCorrect": false
+        },
+        {
+          "text": "La Mer Rouge",
+          "isCorrect": false
+        },
+        {
+          "text": "La Mer de Galilée",
+          "isCorrect": true
+        },
+        {
+          "text": "La Mer Méditerranée",
+          "isCorrect": false
+        }
+      ],
+      "timeLimit": 25,
+      "reference": "Marc 4:35-41"
+    },
+    {
+      "question": "Combien d'années l'homme paralytique attendait-il près de la piscine de Béthesda avant d'être guéri par Jésus?",
+      "answers": [
+        {
+          "text": "12 ans",
+          "isCorrect": false
+        },
+        {
+          "text": "20 ans",
+          "isCorrect": false
+        },
+        {
+          "text": "38 ans",
+          "isCorrect": true
+        },
+        {
+          "text": "40 ans",
+          "isCorrect": false
+        }
+      ],
+      "timeLimit": 30,
+      "reference": "Jean 5:1-9"
+    },
+    {
+      "question": "Que dit Jésus pour guérir l'homme sourd et muet?",
+      "answers": [
+        {
+          "text": "Ephata (Ouvre-toi)",
+          "isCorrect": true
+        },
+        {
+          "text": "Talitha koum (Lève-toi)",
+          "isCorrect": false
+        },
+        {
+          "text": "Eli, Eli",
+          "isCorrect": false
+        },
+        {
+          "text": "Maranatha",
+          "isCorrect": false
+        }
+      ],
+      "timeLimit": 30,
+      "reference": "Marc 7:31-37"
+    },
+    {
+      "question": "Combien de corbeilles de restes ont été ramassées après la multiplication des pains pour 5000 personnes?",
+      "answers": [
+        {
+          "text": "5 corbeilles",
+          "isCorrect": false
+        },
+        {
+          "text": "7 corbeilles",
+          "isCorrect": false
+        },
+        {
+          "text": "12 corbeilles",
+          "isCorrect": true
+        },
+        {
+          "text": "20 corbeilles",
+          "isCorrect": false
+        }
+      ],
+      "timeLimit": 25,
+      "reference": "Matthieu 14:20"
+    },
+    {
+      "question": "Quelle était la profession de l'homme à la main paralysée que Jésus a guéri un jour de sabbat?",
+      "answers": [
+        {
+          "text": "Charpentier",
+          "isCorrect": false
+        },
+        {
+          "text": "La Bible ne le précise pas",
+          "isCorrect": true
+        },
+        {
+          "text": "Pêcheur",
+          "isCorrect": false
+        },
+        {
+          "text": "Berger",
+          "isCorrect": false
+        }
+      ],
+      "timeLimit": 30,
+      "reference": "Marc 3:1-6"
+    },
+    {
+      "question": "Combien de fois Jésus a-t-il touché les yeux de l'aveugle de Bethsaïda avant qu'il ne voie clairement?",
+      "answers": [
+        {
+          "text": "Une fois",
+          "isCorrect": false
+        },
+        {
+          "text": "Deux fois",
+          "isCorrect": true
+        },
+        {
+          "text": "Trois fois",
+          "isCorrect": false
+        },
+        {
+          "text": "Il n'a pas touché ses yeux",
+          "isCorrect": false
+        }
+      ],
+      "timeLimit": 30,
+      "reference": "Marc 8:22-25"
+    },
+    {
+      "question": "Dans quel village Jésus a-t-il ressuscité le fils unique d'une veuve?",
+      "answers": [
+        {
+          "text": "Béthanie",
+          "isCorrect": false
+        },
+        {
+          "text": "Capernaüm",
+          "isCorrect": false
+        },
+        {
+          "text": "Naïn",
+          "isCorrect": true
+        },
+        {
+          "text": "Cana",
+          "isCorrect": false
+        }
+      ],
+      "timeLimit": 30,
+      "reference": "Luc 7:11-17"
+    }
+  ]
+}
